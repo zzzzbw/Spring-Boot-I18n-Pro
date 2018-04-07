@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.zbw</groupId>
-	<artifactId>i18</artifactId>
+	<artifactId>i18n</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>i18</name>
+	<name>i18n</name>
 	<description>Demo project for Spring Boot with i18 pro</description>
 
 	<parent>

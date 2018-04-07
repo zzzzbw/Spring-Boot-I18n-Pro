@@ -1,4 +1,4 @@
-package com.zbw.i18.controller;
+package com.zbw.i18n.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HelloController {
 
     @GetMapping("hello")
-    public String Hello(Model model) {
+    public String Hello() {
         return "hello";
     }
 }

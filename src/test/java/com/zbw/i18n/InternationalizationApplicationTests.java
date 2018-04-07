@@ -1,4 +1,4 @@
-package com.zbw.i18;
+package com.zbw.i18n;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

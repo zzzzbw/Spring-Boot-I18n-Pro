@@ -1,4 +1,4 @@
-package com.zbw.i18;
+package com.zbw.i18n;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,10 +14,10 @@ import java.util.Locale;
 
 @SpringBootApplication
 @Configuration
-public class I18Application {
+public class I18nApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(I18Application.class, args);
+        SpringApplication.run(I18nApplication.class, args);
     }
 
     @Bean
