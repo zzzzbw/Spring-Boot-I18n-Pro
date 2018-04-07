@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="/common/common_head::commonHeader(#{title})"></head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" th:text="#{company_name}"></a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#" th:text="#{default_message}">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard" th:text="#{dashboard}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/merchant" th:text="#{merchant}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shop" th:text="#{shop}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user" th:text="#{user}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2" th:text="#{location}"></h1>
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal" th:text="#{merchant_info}"></h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            <span th:text="${#lists.size(merchants)}"></span>
+                            <small class="text-muted" th:text="#{piece}"></small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li th:text="2+#{piece}+#{gold_merchant}"></li>
+                            <li th:text="4+#{piece}+#{sliver_merchant}"></li>
+                            <li th:text="4+#{piece}+#{normal_merchant}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal" th:text="#{shop_info}"></h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            <span th:text="${#lists.size(shops)}"></span>
+                            <small class="text-muted" th:text="#{piece}"></small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li th:text="1+#{piece}+#{gold_shop}"></li>
+                            <li th:text="2+#{piece}+#{sliver_shop}"></li>
+                            <li th:text="7+#{piece}+#{normal_shop}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal" th:text="#{user_info}"></h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            <span th:text="${#lists.size(users)}"></span>
+                            <small class="text-muted" th:text="#{bit}"></small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li th:text="0+#{bit}+#{gold_user}"></li>
+                            <li th:text="1+#{bit}+#{sliver_user}"></li>
+                            <li th:text="4+#{bit}+#{normal_user}"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

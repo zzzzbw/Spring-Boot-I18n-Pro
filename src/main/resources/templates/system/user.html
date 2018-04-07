@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="/common/common_head::commonHeader(#{title})"></head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" th:text="#{company_name}"></a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#" th:text="#{default_message}"></a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" th:text="#{dashboard}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/merchant" th:text="#{merchant}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shop" th:text="#{shop}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user" th:text="#{user}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2" th:text="#{location}"></h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button class="btn btn-sm btn-outline-secondary" th:text="#{share}"></button>
+                        <button class="btn btn-sm btn-outline-secondary" th:text="#{export}"></button>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" th:text="#{this_week}">
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th th:text="#{header_01}"></th>
+                        <th th:text="#{header_02}"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user:${list}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${#dates.format(user.create, 'yyyy-MM-dd')}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
