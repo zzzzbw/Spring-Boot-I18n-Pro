@@ -15,7 +15,6 @@ import java.util.Locale;
 @SpringBootApplication
 @Configuration
 public class I18nApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(I18nApplication.class, args);
     }
@@ -23,12 +22,10 @@ public class I18nApplication {
     @Bean
     public LocaleResolver localeResolver() {
         CookieLocaleResolver slr = new CookieLocaleResolver();
-        slr.setDefaultLocale(Locale.CHINA);
         slr.setCookieMaxAge(3600);
         slr.setCookieName("Language");
         return slr;
     }
-
 
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
