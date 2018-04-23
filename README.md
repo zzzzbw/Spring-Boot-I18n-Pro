@@ -1,5 +1,6 @@
 # Spring-Boot-I18-Pro
-Spring-boot+thymeleaf+Bootstrap的国际化模板
+### Spring-boot+thymeleaf+Bootstrap的国际化模板
+
 博客文章[在Spring-Boot上加强国际化功能](http://zzzzbw.cn/article/7)的源代码
 
 相关截图
