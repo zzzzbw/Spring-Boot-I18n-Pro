@@ -59,7 +59,14 @@ public class MessageResourceExtension extends ResourceBundleMessageSource {
         }
         //设置父MessageSource
         ResourceBundleMessageSource parent = new ResourceBundleMessageSource();
-        parent.setBasename(basename);
+        //是否是多个目录
+        if (basename.indexOf(",") > 0) {
+            parent.setBasenames(basename.split(","));
+        } else {
+            parent.setBasename(basename);
+        }
+        //设置文件编码
+        parent.setDefaultEncoding("UTF-8");
         this.setParentMessageSource(parent);
     }
 
