@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Locale;
 
+/**
+ * @author foxiswho
+ * @since  2019/4/29 17:59
+ */
 @Component
 public class LocaleMessage {
 
@@ -14,7 +18,7 @@ public class LocaleMessage {
     private MessageSource messageSource;
 
     /**
-     * @param code：对应文本配置的key.
+     * @param code 对应文本配置的key
      * @return 对应地区的语言消息字符串
      */
     public String getMessage(String code) {

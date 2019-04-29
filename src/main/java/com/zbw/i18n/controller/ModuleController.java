@@ -18,14 +18,10 @@ public class ModuleController {
 
     @GetMapping("/module")
     public String hello() {
-        System.out.println("1");
-        String msg3 = localeMessage.getMessage("module.title");
-        System.out.println("module.title:"+msg3);
-        msg3 = localeMessage.getMessage("title");
-        System.out.println("title:"+localeMessage.getMessage("title"));
-
-        System.out.println("title:"+msg3);
+        System.out.println("module.title: " + localeMessage.getMessage("module.title"));
+        System.out.println("title: " + localeMessage.getMessage("title"));
+        System.out.println("name: " + localeMessage.getMessage("name", new Object[]{"spring"}));
         System.out.println(localeMessage.getLocale());
-        return msg3;
+        return "module";
     }
 }
